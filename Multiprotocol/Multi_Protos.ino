@@ -80,6 +80,7 @@ const char STR_SCANNER[]	="Scanner";
 const char STR_FRSKY_RX[]	="FrSkyRX";
 const char STR_AFHDS2A_RX[]	="FS2A_RX";
 const char STR_HOTT[]		="HoTT";
+const char STR_HSTAR[]		="HStar";
 const char STR_FX[]			="FX";
 const char STR_BAYANG_RX[]	="BayanRX";
 const char STR_PELIKAN[]	="Pelikan";
@@ -123,6 +124,7 @@ const char STR_WPL[]        ="WPL";
 const char STR_ARES[]        ="ARES";
 
 const char STR_SUBTYPE_FLYSKY[] =     "\x04""Std\0""V9x9""V6x6""V912""CX20";
+const char STR_SUBTYPE_HSTAR[] =      "\x03""D43";
 const char STR_SUBTYPE_HUBSAN[] =     "\x04""H107""H301""H501";
 const char STR_SUBTYPE_FRSKYD[] =     "\x06""D8\0   ""Cloned";
 #ifndef MULTI_EU
@@ -383,6 +385,9 @@ const mm_protocol_definition multi_protocols[] = {
 	#endif
 	#if defined(HOTT_CC2500_INO)
 		{PROTO_HOTT,       STR_HOTT,      STR_SUBTYPE_HOTT,      2, OPTION_RFTUNE,  1, 0, SW_CC2500, HOTT_init,       HOTT_callback       },
+	#endif
+	#if defined(HSTAR_CYRF6936_INO)
+		{PROTO_HSTAR,      STR_HSTAR,     STR_SUBTYPE_HSTAR,     1, OPTION_NONE,    0, 0, SW_CYRF,   HSTAR_init,      HSTAR_callback      },
 	#endif
 	#if defined(HUBSAN_A7105_INO)
 		{PROTO_HUBSAN,     STR_HUBSAN,    STR_SUBTYPE_HUBSAN,    3, OPTION_VIDFREQ, 0, 0, SW_A7105,  HUBSAN_init,     HUBSAN_callback     },

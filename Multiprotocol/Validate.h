@@ -262,6 +262,7 @@
 #endif
 
 #if not defined(CYRF6936_INSTALLED) || defined MULTI_EU
+	#undef	HSTAR_CYRF6936_INO
 	#undef	DEVO_CYRF6936_INO
 	#if not defined(CYRF6936_INSTALLED)
 		#undef	DSM_CYRF6936_INO
@@ -311,6 +312,7 @@
 	#undef	BAYANG_NRF24L01_INO
 	#if not defined(NRF24L01_INSTALLED)
 		#undef	BAYANG_RX_NRF24L01_INO
+		#undef	HSTAR_CYRF6936_INO		//Need NRF24L01 to learn the car ID
 	#endif
 	#undef	BUGSMINI_NRF24L01_INO
 	#undef	CABELL_NRF24L01_INO
@@ -377,6 +379,7 @@
 	//RF2500 emulation does not work on atmega...
 	#undef	E010R5_CYRF6936_INO
 	#undef	E129_CYRF6936_INO
+	#undef	HSTAR_CYRF6936_INO
 #endif
 #if not defined(STM32_BOARD)
 	#undef SX1276_INSTALLED
@@ -389,6 +392,7 @@
 	#undef	JOYSWAY_A7105_INO
 	#undef	LOSI_CYRF6936_INO		//Need DSM to be enabled
 	#undef	TRAXXAS_CYRF6936_INO
+	#undef	HSTAR_CYRF6936_INO
 	#undef	EAZYRC_NRF24L01_INO
 	#undef	KYOSHO3_CYRF6936_INO
 	#undef	MOULDKG_NRF24L01_INO

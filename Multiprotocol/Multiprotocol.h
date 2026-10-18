@@ -138,6 +138,7 @@ enum PROTOCOLS
 	PROTO_ARES		= 108,	// =>CC2500
 	PROTO_MOFLY		= 109,	// =>CC2500 & NRF24L01
 	
+	PROTO_HSTAR		= 125,	// =>CYRF6936
 	PROTO_NANORF	= 126,	// =>NRF24L01
 	PROTO_TEST		= 127,	// =>CC2500
 };
@@ -518,6 +519,10 @@ enum SGF22
 	SGF22_CX10		= 3,
 	SGF22_T28 		= 4,
 };
+enum HSTAR
+{
+	HSTAR_D43	= 0,
+};
 enum JIABAILE
 {
 	JIABAILE_STD	= 0,
@@ -892,7 +897,8 @@ enum {
 #define TRAXXAS_EEPROM_OFFSET	1079	// RX ID and SOP index, 3 bytes per model id, end is 1079+192=1271
 #define XK2_EEPROM_OFFSET		1271	// RX ID checksum, 1 byte per model, end is 1271+64=1335
 #define JIABAILE_EEPROM_OFFSET	1335	// RX ID, 3 bytes per model, end is 1335+64*3=1527
-//#define CONFIG_EEPROM_OFFSET 	1527	// Current configuration of the multimodule
+#define HSTAR_EEPROM_OFFSET		1527	// Car ID, 3 bytes per model, end is 1527+64*3=1719
+//#define CONFIG_EEPROM_OFFSET 	1719	// Current configuration of the multimodule
 
 /* STM32 Flash Size */
 #ifndef DISABLE_FLASH_SIZE_CHECK

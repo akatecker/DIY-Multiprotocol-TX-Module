@@ -111,6 +111,7 @@ CFlie|AIR|38|CFlie||||||||NRF24L01|
 [Hitec](Protocols_Details.md#HITEC---39)||39|OPT_FW|OPT_HUB|MINIMA||||||CC2500|
 [Hontai](Protocols_Details.md#HONTAI---26)||26|HONTAI|JJRCX1|X5C1|FQ777_951|XKK170||||NRF24L01|XN297
 [HoTT](Protocols_Details.md#HoTT---57)||57|Sync|No_Sync|||||||CC2500|
+[HStar](Protocols_Details.md#HStar---125)||125|D43|||||||CYRF6936|
 [Hubsan](Protocols_Details.md#HUBSAN---2)||2|H107|H301|H501||||||A7105|
 [J6Pro](Protocols_Details.md#J6Pro---22)||22|||||||||CYRF6936|
 [JIABAILE](Protocols_Details.md#JIABAILE---102)||102|Std|Gyro|||||||NRF24L01|XN297
@@ -686,6 +687,19 @@ Loop: circular flight on the C159 (others?)
 Flip: flip/aerobatic on the C129v2 (others?)
 
 Debug: you must know what you are doing!!! The new values are stored at power off. The rudder trim is used to change the pitch value (relative to the previously stored value). Ail end Ele trims are used to better trim the FC.
+
+## HStar - *125*
+Models: HStar D43-01Q / D43-02Q 1:43 drift cars ("SP Racing Speed" transmitter, PCB YY-HX430-TX, car PCB V103).
+
+Bind once per car: press bind, then switch the car on within ~10 s. The module learns the car's ID from its answer (needs the NRF24L01 of the 4-in-1) and stores it per receiver number, so each model can have its own car. After power on the car links by itself.
+
+CH1|CH2|CH3|CH4|CH5|CH6
+---|---|---|---|---|---
+TH|ST|GYRO||LIGHT|SPEED
+
+GYRO: -100%=off..+100%=max. LIGHT and SPEED are button presses like on the original transmitter: a momentary button gives one press per push, a toggle switch one press per flip. The car cycles its states (light: all blinking/headlights/off, speed: low/high).
+
+### Sub_protocol D43 - *0*
 
 ## J6Pro - *22*
 
